@@ -1,59 +1,248 @@
-# Introduction to GitHub
+# 테니스 동호회 대진표 생성기
 
-<!-- ![](https://github.com/flynn0406/skills-introduction-to-github/actions/workflows/0-start-exercise.yml/badge.svg) -->
-![](https://github.com/flynn0406/skills-introduction-to-github/actions/workflows/1-create-a-branch.yml/badge.svg)
-![](https://github.com/flynn0406/skills-introduction-to-github/actions/workflows/2-commit-a-file.yml/badge.svg)
-![](https://github.com/flynn0406/skills-introduction-to-github/actions/workflows/3-open-a-pull-request.yml/badge.svg)
-![](https://github.com/flynn0406/skills-introduction-to-github/actions/workflows/4-merge-your-pull-request.yml/badge.svg)
+테니스 동호회에서 복식 경기의 균형 잡힌 대진표를 자동으로 생성하고, 경기 결과를 체계적으로 관리할 수 있는 웹 애플리케이션입니다.
 
-_Get started using GitHub in less than an hour._
+## 🏆 주요 기능
 
-## Welcome
+### 📝 그룹 관리
+- **그룹 생성**: 테니스 동호회나 팀 단위로 그룹을 생성하고 관리
+- **멤버 관리**: 각 멤버의 이름, 성별, 실력 레벨(1-5) 설정
+- **멤버 수정/삭제**: 언제든지 멤버 정보를 업데이트하거나 삭제 가능
 
-People use GitHub to build some of the most advanced technologies in the world. Whether you’re visualizing data or building a new game, there’s a whole community and set of tools on GitHub that can help you do it even better. GitHub Skills’ “Introduction to GitHub” exercise guides you through everything you need to start contributing in less than an hour.
+### 🎯 스마트 대진표 생성
+- **자동 매칭**: 성별과 실력 레벨을 고려한 균형 잡힌 대진표 자동 생성
+- **복식 타입**: 남자복식, 여자복식, 혼성복식 모두 지원
+- **밸런스 검증**: 생성된 대진표의 밸런스를 자동으로 분석하고 피드백 제공
 
-- **Who is this for**: New developers, new GitHub users, and students.
-- **What you'll learn**: We'll introduce repositories, branches, commits, and pull requests.
-- **What you'll build**: We'll make a short Markdown file you can use as your [profile README](https://docs.github.com/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme).
-- **Prerequisites**: None. This exercise is a great introduction for your first day on GitHub.
-- **How long**: This exercise takes less than one hour to complete.
+### ⚙️ 유연한 경기 규칙 설정
+- **매치 수**: 2-10개 매치 선택 가능
+- **세트 수**: 1-5세트 선택 가능
+- **게임 수**: 4게임 또는 6게임 선택
+- **듀스 규칙**: Advantage 또는 No-Ad 선택
+- **타이브레이크**: 7점/5점 타이브레이크, 타이없이 승자결정, 무승부 종료 등
 
-In this exercise, you will:
+### 📊 실시간 스코어 관리
+- **직관적인 스코어 입력**: +/- 버튼 또는 직접 입력으로 간편한 스코어 관리
+- **타이브레이크 지원**: 타이브레이크 조건 자동 감지 및 점수 입력
+- **세트별 관리**: 각 세트별로 독립적인 스코어 관리
+- **자동 승자 결정**: 규칙에 따른 자동 승자 결정
 
-1. Create a branch
-2. Commit a file
-3. Open a pull request
-4. Merge your pull request
+### 🏅 종합 순위 시스템
+- **승점 기준 순위**: 승리 3점, 무승부 2점, 패배 0점 방식
+- **게임 포인트 기준 순위**: 게임 득실차를 반영한 포인트 시스템
+- **상세 통계**: 경기수, 승-무-패, 게임 승-패 등 종합 통계
+- **실시간 업데이트**: 경기 결과 입력 시 즉시 순위 업데이트
 
-### How to start this exercise
+## 🚀 시작하기
 
-1. Right-click **Copy Exercise** and open the link in a new tab.
+### 필요 조건
+- Node.js 18+ 
+- npm 또는 yarn
 
-   <a id="copy-exercise">
-      <img src="https://img.shields.io/badge/📠_Copy_Exercise-AAA" height="25pt"/>
-   </a>
+### 설치 및 실행
 
-2. In the new tab, most of the prompts will automatically fill in for you.
-   - For owner, choose your personal account or an organization to host the repository.
-   - We recommend creating a public repository, as private repositories will [use Actions minutes](https://docs.github.chttps://github.com/flynn0406/skills-introduction-to-github/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
-   - Scroll down and click the **Create repository** button at the bottom of the form.
+1. **저장소 클론**
+```bash
+git clone <repository-url>
+cd tennis-tournament-manager
+```
 
-3. After your new repository is created, wait about 20 seconds for the exercise to be prepared and buttons updated. You will continue working from your copy of the exercise.
-   - The **Copy Exercise** button will deactivate, changing to gray.
-   - The **Start Exercise** button will activate, changing to green.
-   - You will likely need to refresh the page.
+2. **의존성 설치**
+```bash
+npm install
+```
 
-4. Click **Start Exercise**. Follow the step-by-step instructions and feedback will be provided as you progress.
+3. **개발 서버 실행**
+```bash
+npm run dev
+```
 
-   <a id="start-exercise" href="https://github.com/flynn0406/skills-introduction-to-github/issues/1">
-      <img src="https://img.shields.io/badge/🚀_Start_Exercise-008000" height="25pt"/>
-   </a>
+4. **브라우저에서 접속**
+```
+http://localhost:3000
+```
 
-> [!IMPORTANT]
-> The **Start Exercise** button will activate after copying the repository. You will probably need to refresh the page.
+### 빌드
+```bash
+npm run build
+```
+
+## 📱 사용 가이드
+
+### 1. 그룹 생성 및 멤버 관리
+
+1. **그룹 생성**
+   - 홈페이지에서 "그룹 관리하기" 클릭
+   - "새 그룹 만들기" 버튼으로 그룹 생성
+   - 그룹명 입력 후 생성
+
+2. **멤버 추가**
+   - 생성된 그룹 카드에서 "멤버 관리" 클릭
+   - "멤버 추가" 버튼으로 새 멤버 등록
+   - 이름, 성별, 실력 레벨(1-5) 입력
+
+3. **실력 레벨 가이드**
+   - **Level 1 (초급)**: 테니스를 시작한 지 얼마 안된 분
+   - **Level 2 (초중급)**: 기본 스트로크가 가능한 분
+   - **Level 3 (중급)**: 안정적인 랠리가 가능한 분
+   - **Level 4 (중상급)**: 전술적 플레이가 가능한 분
+   - **Level 5 (상급)**: 대회 출전 경험이 있는 분
+
+### 2. 토너먼트 생성
+
+1. **토너먼트 시작**
+   - 그룹 상세 페이지에서 "토너먼트 생성" 버튼 클릭
+   - 최소 4명의 멤버가 등록되어 있어야 함
+
+2. **참가자 선택**
+   - 토너먼트에 참가할 멤버들을 선택
+   - "전체 선택" 또는 개별 선택 가능
+   - 선택된 참가자의 성별/레벨 분포 확인
+
+3. **경기 규칙 설정**
+   - 매치 수: 생성할 경기의 개수 (2-10개)
+   - 세트 수: 각 매치의 세트 수 (1-5세트)
+   - 게임 수: 1세트당 게임 수 (4게임/6게임)
+   - 듀스 규칙: Advantage 또는 No-Ad
+   - 타이브레이크: 7점/5점 또는 타이없이 승자결정
+
+4. **대진표 미리보기**
+   - 생성된 대진표 확인
+   - 밸런스 분석 결과 검토
+   - 필요시 대진표 재생성 가능
+
+### 3. 경기 진행 및 스코어 입력
+
+1. **경기 관리**
+   - 토너먼트 상세 페이지에서 각 매치별 스코어 입력
+   - "입력" 버튼으로 새 스코어 입력, "수정" 버튼으로 기존 스코어 수정
+
+2. **스코어 입력 방법**
+   - +/- 버튼 클릭 또는 직접 숫자 입력
+   - 타이브레이크 조건 시 자동으로 "타이브레이크 시작" 버튼 표시
+   - 세트 완료 후 "세트 추가" 버튼으로 다음 세트 진행
+
+3. **타이브레이크**
+   - 4-4 (4게임) 또는 6-6 (6게임) 시 타이브레이크 진행
+   - 7점 또는 5점 타이브레이크 규칙 적용
+   - 2점 차이로 승부 결정
+
+### 4. 순위 확인
+
+1. **순위표 보기**
+   - 토너먼트 상세 페이지에서 "순위표" 탭 클릭
+   - 승점 기준 또는 게임 포인트 기준 순위 선택
+
+2. **순위 계산 방식**
+   - **승점 기준**: 승리 3점, 무승부 2점, 패배 0점
+   - **게임 포인트 기준**: 게임 득실차 (+1점 per 게임 승리, -1점 per 게임 패배)
+
+## 🎯 대진 생성 규칙
+
+### 기본 원칙
+1. **성별 우선**: 같은 성별끼리 복식을 우선 구성
+2. **레벨 밸런스**: 실력 레벨이 비슷한 팀끼리 매치
+3. **참여 균등**: 모든 참가자가 비슷한 횟수로 경기 참여
+4. **혼성 보완**: 성비가 맞지 않을 경우 혼성 복식으로 보완
+
+### 매치 타입
+- **남자복식**: 남성 4명으로 구성된 경기
+- **여자복식**: 여성 4명으로 구성된 경기  
+- **혼성복식**: 남녀 혼합으로 구성된 경기
+
+### 시간 기반 매치 수 조정
+- **4게임**: 2시간당 약 6매치 진행 가능
+- **6게임**: 2시간당 약 5매치 진행 가능
+
+## 💾 데이터 저장
+
+모든 데이터는 브라우저의 로컬 스토리지에 저장되어 다음 방문 시에도 데이터가 유지됩니다.
+
+### 저장되는 데이터
+- 그룹 정보 및 멤버 목록
+- 토너먼트 설정 및 대진표
+- 경기 결과 및 스코어
+- 순위 및 통계 정보
+
+### 데이터 관리
+- 자동 저장: 모든 변경사항이 즉시 저장
+- 데이터 지속성: 브라우저를 닫았다가 다시 열어도 데이터 유지
+- 브라우저별 독립: 각 브라우저마다 독립적인 데이터 저장
+
+## 🛠️ 기술 스택
+
+### Frontend
+- **React 18**: 사용자 인터페이스 구축
+- **TypeScript**: 타입 안전성 및 개발 생산성
+- **React Router**: 클라이언트 사이드 라우팅
+- **Lucide React**: 아이콘 라이브러리
+
+### Build Tools
+- **Vite**: 빠른 개발 서버 및 빌드 도구
+- **ESLint**: 코드 품질 관리
+
+### Styling
+- **CSS3**: 커스텀 CSS 스타일링
+- **CSS Grid & Flexbox**: 반응형 레이아웃
+
+## 📂 프로젝트 구조
+
+```
+src/
+├── components/          # 재사용 가능한 컴포넌트
+│   ├── CreateGroupModal.tsx
+│   ├── Navigation.tsx
+│   ├── PlayerModal.tsx
+│   └── ScoreModal.tsx
+├── pages/              # 페이지 컴포넌트
+│   ├── GroupDetailPage.tsx
+│   ├── GroupsPage.tsx
+│   ├── HomePage.tsx
+│   ├── TournamentDetailPage.tsx
+│   └── TournamentPage.tsx
+├── types/              # TypeScript 타입 정의
+│   └── index.ts
+├── utils/              # 유틸리티 함수
+│   ├── matchGeneration.ts
+│   ├── scoreCalculation.ts
+│   └── storage.ts
+├── App.tsx             # 메인 앱 컴포넌트
+├── main.tsx           # 앱 진입점
+└── index.css          # 글로벌 스타일
+```
+
+## 🤝 기여하기
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 라이선스
+
+이 프로젝트는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 `LICENSE` 파일을 참조하세요.
+
+## 🔮 향후 계획
+
+### v2.0 예정 기능
+- [ ] 데이터 백업/복원 기능
+- [ ] 토너먼트 템플릿 저장
+- [ ] 통계 차트 및 분석
+- [ ] 인쇄용 대진표 출력
+- [ ] 다중 토너먼트 동시 진행
+- [ ] 선수별 상세 통계
+
+### v3.0 예정 기능
+- [ ] 클라우드 데이터 동기화
+- [ ] 모바일 앱 지원
+- [ ] 실시간 스코어 공유
+- [ ] 자동 사진 촬영 연동
+
+## 📞 지원
+
+문제가 발생하거나 기능 요청이 있으시면 GitHub Issues를 통해 연락해 주세요.
 
 ---
 
-Get help: [Post in our discussion board](https://github.com/orgs/skills/discussions/categories/introduction-to-github) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
-
-&copy; 2024 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+**테니스 동호회 대진표 생성기**로 더욱 체계적이고 공정한 테니스 경기를 즐겨보세요! 🎾
