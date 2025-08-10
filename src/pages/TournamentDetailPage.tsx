@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Trophy, Users, Clock, Edit, Eye } from 'lucide-react';
+import { ArrowLeft, Trophy, Users, Edit, Eye } from 'lucide-react';
 import { 
   getTournamentById, 
   updateTournament, 
@@ -48,7 +48,6 @@ const TournamentDetailPage: React.FC = () => {
 
     const updatedMatches = tournament.matches.map(match => {
       if (match.id === matchId) {
-        const winner = determineMatchWinner(scores, tournament.rules);
         return {
           ...match,
           scores,

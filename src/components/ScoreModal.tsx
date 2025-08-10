@@ -4,8 +4,7 @@ import { Match, MatchScore, SetScore, GameRules } from '../types';
 import { 
   determineSetWinner, 
   determineMatchWinner, 
-  validateScore, 
-  getNextGameInfo 
+  validateScore
 } from '../utils/scoreCalculation';
 
 interface ScoreModalProps {
@@ -112,7 +111,8 @@ const ScoreModal: React.FC<ScoreModalProps> = ({ match, rules, onClose, onSave }
 
     // 승자 결정
     if (matchScore.sets.length > 0) {
-      matchScore.winner = determineMatchWinner(matchScore, rules);
+      const winner = determineMatchWinner(matchScore, rules);
+      matchScore.winner = winner || undefined;
     }
 
     onSave(match.id, matchScore);

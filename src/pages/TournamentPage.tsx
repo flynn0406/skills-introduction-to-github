@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Users, Settings, Trophy, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, Trophy, AlertTriangle } from 'lucide-react';
 import { getGroupById, createTournament } from '../utils/storage';
 import { generateMatches, validateMatchBalance } from '../utils/matchGeneration';
-import { Group, Player, GameRules, Tournament } from '../types';
+import { Group, GameRules, Tournament } from '../types';
 import { v4 as uuidv4 } from 'uuid';
 
 const TournamentPage: React.FC = () => {

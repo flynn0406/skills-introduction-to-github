@@ -1,4 +1,4 @@
-import { Match, MatchScore, SetScore, GameRules, PlayerStats, Tournament, Player } from '../types';
+import { Match, MatchScore, SetScore, GameRules, PlayerStats, Tournament } from '../types';
 
 // 세트 승자 결정
 export function determineSetWinner(setScore: SetScore, rules: GameRules): 'team1' | 'team2' | 'draw' | null {

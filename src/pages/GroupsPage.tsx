@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Plus, Users, Calendar, Trophy, Edit, Trash2 } from 'lucide-react';
+import { Plus, Users, Trophy, Edit, Trash2 } from 'lucide-react';
 import { loadGroups, createGroup, deleteGroup, getTournamentsByGroupId } from '../utils/storage';
 import { Group } from '../types';
 import CreateGroupModal from '../components/CreateGroupModal';

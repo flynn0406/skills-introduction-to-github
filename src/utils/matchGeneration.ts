@@ -59,15 +59,15 @@ function getMatchType(team1: Team, team2: Team): 'mens' | 'womens' | 'mixed' {
   return 'mixed';
 }
 
-// 플레이어가 이미 다른 매치에 참여하고 있는지 확인
-function isPlayerInMatches(playerId: string, matches: Match[]): boolean {
-  return matches.some(match => 
-    match.team1.player1.id === playerId ||
-    match.team1.player2.id === playerId ||
-    match.team2.player1.id === playerId ||
-    match.team2.player2.id === playerId
-  );
-}
+// 플레이어가 이미 다른 매치에 참여하고 있는지 확인 (향후 사용 예정)
+// function isPlayerInMatches(playerId: string, matches: Match[]): boolean {
+//   return matches.some(match => 
+//     match.team1.player1.id === playerId ||
+//     match.team1.player2.id === playerId ||
+//     match.team2.player1.id === playerId ||
+//     match.team2.player2.id === playerId
+//   );
+// }
 
 // 밸런스가 맞는 매치 생성
 function createBalancedMatch(availableTeams: Team[], existingMatches: Match[]): Match | null {
